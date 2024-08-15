@@ -1,0 +1,113 @@
+#root {
+  /* max-width: 1280px; */
+  z-index: -1;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.hexagon-container {
+  position: relative;
+  width: 320px;
+  height: 330px;
+  margin: 10px auto; 
+}
+
+.hexagon-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* border-radius: 16% 0% 0% 0% / 17% 10% 10% 10% ; */
+  border-radius: 50% ;
+  border: 3px solid rgb(105, 101, 91);
+  /* clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%); */
+  /* opacity: 0.6; */
+  z-index: -1;
+}
+
+
+
+.about_img_container {
+  position: relative;
+  width: 300px;
+  height: 340px;
+  margin: 10px auto; 
+}
+
+.about_img_container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  border: 3px solid rgb(255, 255, 255);
+  /* clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%); */
+  /* opacity: 0.6; */
+  z-index: -1;
+}
+
+@media screen and (max-width: 416px ) {
+  .hexagon-container {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 10px auto; 
+  }
+
+  .about_img_container {
+    position: relative;
+    width: 170px;
+    height: 190px;
+    margin: 10px auto; 
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  z-index: 9999; /* Ensure tooltip is above other elements */
+}
+
+button:hover + .tooltip {
+  display: block;
+}
+
