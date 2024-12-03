@@ -127,11 +127,6 @@ const Skills = () => {
                 <img src={src} alt="" className="w-16 mx-auto my-3" />
                 <p className="mt-4">{title}</p>
                 <p className="mt-1 flex flex-row justify-center">
-                  {/* <CiStar color="red" fill="red" />
-                  <CiStar color="red" />
-                  <CiStar color="red" />
-                  <CiStar color="red" />
-                  <CiStar color="red" /> */}
                   <Rating name="read-only" size="small" value={rating} precision={0.01} readOnly />
                 </p>
               </div>

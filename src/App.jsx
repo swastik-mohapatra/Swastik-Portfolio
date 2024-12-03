@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <NavBar />
-      <div className="px-20 w-full">
+      <div className="px-20 mt-20 w-full">
         <Home />
         <About/>
         <Skills/>
