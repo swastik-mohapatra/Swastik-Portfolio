@@ -13,6 +13,7 @@ const About = () => {
                 <img
                   src={AboutPic}
                   alt="My Profile"
+                  className="object-cover"
                 />
               </div>
             </div>

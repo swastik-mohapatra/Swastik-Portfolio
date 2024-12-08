@@ -39,6 +39,7 @@ function Home() {
               <img
                 src={AIPIC}
                 alt="My Profile"
+                className="object-cover"
               />
             </div>
            
