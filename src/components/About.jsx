@@ -2,11 +2,11 @@ import AboutPic from "../assets/images/image_about.jpg";
 
 const About = () => {
   return (
-    <div name="about" className="py-10 w-full md:h-screen ">
-      <div className=" mx-5 justify-center w-fit h-full">
+    <div name="about" className="py-10 w-full ">
+      <div className=" mx-5 justify-center w-full h-full">
         <h1 className="text-4xl font-bold">About Me</h1>
-        <div className="my-8">
-          <div className="grid gird-cols-1 md:grid-cols-2 md:ml-[-7rem]">
+        <div className="my-6">
+          <div className="md:flex md:justify-between md:items-center flex-none grid grid-cols-1 md:grid-cols-0 gap-10">
            
             <div>
               <div className="about_img_container">
@@ -39,7 +39,6 @@ const About = () => {
                 activities.
               </p>
               <br />
-              <p> </p>
             </div>
           </div>
         </div>
