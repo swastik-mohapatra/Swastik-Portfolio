@@ -4,9 +4,10 @@ import {
   } from "react-vertical-timeline-component";
   import "../App.css";
   import "react-vertical-timeline-component/style.min.css";
+  import { FaCircle } from "react-icons/fa6";
   // import { motion } from "framer-motion";
   
-  const WorkIcon = () => <></>;
+  const WorkIcon = () => <><FaCircle /></>;
   
   const experiences = [
     {
@@ -34,7 +35,7 @@ import {
   
   const Experience = () => {
     return (
-      <div name="experience" className="py-10 w-full md:h-screen">
+      <div name="experience" className="py-10 w-full h-full">
         <div className="mx-5 justify-center w-fit h-full">
           <h1 className="text-4xl font-bold">Experience</h1>
           <div className="my-8">
@@ -42,7 +43,7 @@ import {
               <VerticalTimeline layout="1-column-left">
                 {experiences.map((exp) => (
                   <VerticalTimelineElement
-                    key={exp.id}
+                    key={exp?.id}
                     contentStyle={{
                       background: "#374151",
                       color: "#fff",
@@ -50,12 +51,12 @@ import {
                     contentArrowStyle={{
                       borderRight: "7px solid #374151",
                     }}
-                    date={exp.duration}
-                    iconStyle={{ background: "#374151", color: "black" }}
+                    date={exp?.duration}
+                    iconStyle={{ background: "#374151", color: "white",fontSize:"7" }}
                     icon={<WorkIcon />}
                   >
-                    <h3 className="text-xl font-semibold">{exp.title}</h3>
-                    <h4 className="text-lg font-medium">{exp.company_name}</h4>
+                    <h3 className="text-xl font-semibold">{exp?.title}</h3>
+                    <h4 className="text-lg font-medium">{exp?.company_name}</h4>
                     <ul className="mt-5 list-disc ml-5 space-y-2">
                       {exp.description.map((point, index) => (
                         <li

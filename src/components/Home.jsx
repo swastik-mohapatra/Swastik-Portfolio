@@ -1,6 +1,7 @@
 import Typewriter from "typewriter-effect";
-import AIPIC from "../assets/images/image_home.jpg";
-// import AIPIC2 from "../assets/images/image02.png";
+// import AIPIC from "../assets/images/image_home.jpg";
+import AIPIC from "../assets/images/comp2.png";
+import Computer from "../canvas/Computer";
 
 function Home() {
   return (
@@ -35,12 +36,16 @@ function Home() {
             </div>
           </div>
           <div className="ml-0 md:ml-6 justify-center items-center text-center">
-            <div className="hexagon-container">
+            <div className="">
+            {/* <div className="hexagon-container"> */}
               <img
                 src={AIPIC}
                 alt="My Profile"
                 className="object-cover"
+                width="400"
+                height="400"
               />
+              {/* <Computer/> */}
             </div>
            
           </div>
