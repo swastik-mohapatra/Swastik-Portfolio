@@ -1,4 +1,5 @@
 import AboutPic from "../assets/images/image_about.jpg";
+import Education from "./Education";
 
 const About = () => {
   return (
@@ -42,6 +43,7 @@ const About = () => {
             </div>
           </div>
         </div>
+        <Education/>
       </div>
     </div>
   );
