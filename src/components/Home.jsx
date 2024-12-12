@@ -1,5 +1,6 @@
 import Typewriter from "typewriter-effect";
 import AIPIC from "../assets/images/comp5.png";
+import Spline from "@splinetool/react-spline";
 
 function Home() {
   return (
@@ -35,14 +36,15 @@ function Home() {
             </div>
           </div>
           <div className="ml-0 md:ml-20 justify-center items-center text-center">
-            <div className="">
-              <img
+            <div className="h-[400px] ">
+              {/* <img
                 src={AIPIC}
                 alt="My Profile"
                 className="object-cover"
                 width="650"
                 height="100"
-              />
+              /> */}
+              <Spline scene="https://prod.spline.design/ZXTHTk1nEWEUSlVv/scene.splinecode" />
             </div>
            
           </div>
