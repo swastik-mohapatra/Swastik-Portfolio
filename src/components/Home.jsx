@@ -36,7 +36,7 @@ function Home() {
             </div>
           </div>
           <div className="ml-0 md:ml-20 justify-center items-center text-center">
-            <div className="h-[400px] ">
+            <div className="w-full">
               {/* <img
                 src={AIPIC}
                 alt="My Profile"

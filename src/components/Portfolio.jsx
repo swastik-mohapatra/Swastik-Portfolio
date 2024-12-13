@@ -12,6 +12,7 @@ const Portfolio = () => {
       description:
         "The application was built for a US based chemical company to automate journal entry posting in SAP environment.",
       imageLink: "https://i.ytimg.com/vi/GMCmqb9MHqA/sddefault.jpg",
+      stacks:["ReactJS", "Java", "SAP ABAP","SAP Workflow", "SAP BTP"]
     },
     {
       id: 2,
@@ -20,6 +21,7 @@ const Portfolio = () => {
         "The application was designed for a Singapore based retail chain to facilitate generation of price card (offers and discount) for various commodities sold in their stores.",
       imageLink:
         "https://onecms-res.cloudinary.com/image/upload/s--E3ujKPa_--/f_auto,q_auto/c_fill,g_auto,h_622,w_830/v1/tdy-migration/img_5336.jpg?itok=LjQj4mY9",
+        stacks:["SAP UI5", "CAPM NodeJS","SAP BTP"]
     },
     {
       id: 3,
@@ -27,6 +29,7 @@ const Portfolio = () => {
       description:
         "The application was designed to provide details of various body part exercises and how to perform it.",
       imageLink: "https://i.ytimg.com/vi/gey73xiS8F4/maxresdefault.jpg",
+      stacks:["ReactJS", "REST API"]
     },
   ];
 
