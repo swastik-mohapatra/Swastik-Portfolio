@@ -1,37 +1,12 @@
 import { useState } from "react";
 import PortfolioDetail from "./PortfolioDetail";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { Tooltip, Zoom } from "@mui/material";
+import { portfolioData } from "../constants";
 
 const Portfolio = () => {
   const [detailModal, setDetailModal] = useState(false);
   const [modalDetail, setModalDetail] = useState(null);
-
-  const portfolioData = [
-    {
-      id: 1,
-      portfolioName: "Journal Entry Automation",
-      description:
-        "The application was built for a US based chemical company to automate journal entry posting in SAP environment.",
-      imageLink: "https://i.ytimg.com/vi/GMCmqb9MHqA/sddefault.jpg",
-      stacks:["ReactJS", "Java", "SAP ABAP","SAP Workflow", "SAP BTP"]
-    },
-    {
-      id: 2,
-      portfolioName: "Price Card Harmonisation",
-      description:
-        "The application was designed for a Singapore based retail chain to facilitate generation of price card (offers and discount) for various commodities sold in their stores.",
-      imageLink:
-        "https://onecms-res.cloudinary.com/image/upload/s--E3ujKPa_--/f_auto,q_auto/c_fill,g_auto,h_622,w_830/v1/tdy-migration/img_5336.jpg?itok=LjQj4mY9",
-        stacks:["SAP UI5", "CAPM NodeJS","SAP BTP"]
-    },
-    {
-      id: 3,
-      portfolioName: "Fitness App",
-      description:
-        "The application was designed to provide details of various body part exercises and how to perform it.",
-      imageLink: "https://i.ytimg.com/vi/gey73xiS8F4/maxresdefault.jpg",
-      stacks:["ReactJS", "REST API"]
-    },
-  ];
 
   return (
     <div name="portfolio" className="py-10 w-full">
@@ -42,36 +17,94 @@ const Portfolio = () => {
             {portfolioData.map((item) => (
               <div
                 key={item?.id}
-                className="relative group overflow-hidden rounded-lg shadow-lg"
+                className="relative group overflow-hidden rounded-lg shadow-lg shadow-slate-900 hover:shadow-slate-300 duration-300 cursor-pointer bg-gray-800"
               >
                 <img
-                  className="w-full h-64 object-cover rounded-lg"
+                  className="w-full h-64 object-cover rounded-lg opacity-70"
                   src={item?.imageLink}
                   alt={item?.portfolioName}
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-90 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 flex flex-col justify-center items-center p-4 text-center">
-                  <h5 className="text-2xl font-bold text-white mb-2">
-                    {item?.portfolioName}
-                  </h5>
                   <p className="text-sm text-gray-300 mb-4">
                     {item?.description}
                   </p>
-                  <button
-                    className="inline-block px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
-                    onClick={() => {
-                      setDetailModal(!detailModal);
-                      setModalDetail(item);
-                    }}
-                  >
-                    Read more
-                  </button>
+                  <div className="flex flex-row gap-3">
+                    <button
+                      className="inline-block px-2 py-2 text-xs font-medium text-white bg-blue-800 rounded-lg hover:bg-white hover:text-blue-800 duration-500 focus:ring-4 focus:outline-none focus:ring-blue-300"
+                      onClick={() => {
+                        setDetailModal(!detailModal);
+                        setModalDetail(item);
+                      }}
+                    >
+                      Read more
+                    </button>
+                    <Tooltip
+                      title="Github Link"
+                      slots={{
+                        transition: Zoom,
+                      }}
+                      arrow
+                    >
+                      <button className="inline-block px-2 py-2">
+                        <FaGithub />
+                      </button>
+                    </Tooltip>
+                    <Tooltip
+                      title="Application Link"
+                      slots={{
+                        transition: Zoom,
+                      }}
+                      sx={{
+                        backgroundColor: "red",
+                      }}
+                      arrow
+                    >
+                      <button className="inline-block px-2 py-2">
+                        <FaExternalLinkAlt />
+                      </button>
+                    </Tooltip>
+                    {/* <Tooltip
+                      title="Application Link"
+                      slots={{
+                        transition: Zoom,
+                      }}
+                      componentsProps={{
+                        tooltip: {
+                          sx: {
+                            backgroundColor: "red", 
+                            color: "white", 
+                            fontSize: "0.875rem", 
+                            padding: "4px 8px", 
+                          },
+                        },
+                        arrow: {
+                          sx: {
+                            color: "red", // Change arrow color to match background
+                          },
+                        },
+                      }}
+                      arrow
+                    >
+                      <button className="inline-block px-2 py-2">
+                        <FaExternalLinkAlt />
+                      </button>
+                    </Tooltip> */}
+                  </div>
                 </div>
+                <h5 className="text-2xl p-3 text-center font-bold text-white">
+                  {item?.portfolioName}
+                </h5>
               </div>
             ))}
           </div>
         </div>
       </div>
-      {detailModal && <PortfolioDetail setDetailModal={setDetailModal} portfolioItem={modalDetail}/>}
+      {detailModal && (
+        <PortfolioDetail
+          setDetailModal={setDetailModal}
+          portfolioItem={modalDetail}
+        />
+      )}
     </div>
   );
 };

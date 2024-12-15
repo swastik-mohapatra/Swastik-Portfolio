@@ -1,45 +1,91 @@
-import { Chip, Stack } from "@mui/material";
+import { Chip, Stack, Tooltip, Zoom } from "@mui/material";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 /* eslint-disable react/prop-types */
 const PortfolioDetail = ({ setDetailModal, portfolioItem }) => {
   return (
     <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="relative bg-white rounded-lg shadow dark:bg-gray-700 w-3/4 max-w-2xl">
+      <div className="relative bg-white rounded-lg shadow dark:bg-gray-700 max-w-4xl">
         <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
             {portfolioItem?.portfolioName}
           </h3>
           <button
             type="button"
-            className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+            className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-lg w-8 h-8 flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
             onClick={() => setDetailModal(false)}
           >
             <span className="sr-only">Close modal</span>✖
           </button>
         </div>
 
-        <div className="p-4 md:p-5 space-y-4 grid grid-cols-2">
-          <p className="text-sm leading-relaxed text-gray-500 dark:text-gray-400">
-            {portfolioItem?.description}
-          </p>
+        <div className="p-4 md:p-5 space-y-4 grid grid-cols-2 gap-6">
+          <div>
+            <p className="text-sm leading-relaxed ">
+              {portfolioItem?.description}
+            </p>
+            <ul className="mt-5 list-disc ml-5 space-y-2 leading-normal">
+              {portfolioItem.details.map((point, index) => (
+                <li
+                  key={`portfolio-point-${index}`}
+                  className="text-white-100 text-[14px] pl-1 tracking-wider"
+                >
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </div>
           <img
+            className="rounded-md shadow-md shadow-gray-800 object-cover"
             src={portfolioItem?.imageLink}
             alt={portfolioItem?.portfolioName}
           />
-          <div>
-            <p className="mb-4">Tech Stacks:</p>
+        </div>
+        <div className="p-4 md:p-5 space-y-4">
+          <div className="flex flex-row gap-4 text-sm">
+            <p className="mt-1 whitespace-nowrap font-bold text-lg">Tech Stacks:</p>
             <Stack direction="row" spacing={1}>
-              {portfolioItem?.stacks?.map((item,index)=>(
-                 <Chip key={index} label={item} color="success" />
+              {portfolioItem?.stacks?.map((item, index) => (
+                <Chip
+                  key={index}
+                  label={item}
+                  color="warning"
+                  variant="outlined"
+                />
               ))}
             </Stack>
           </div>
+          <div className="flex flex-row gap-3 text-sm">
+            <p className=" whitespace-nowrap font-bold text-lg">Related Links:</p>
+            <Tooltip
+              title="Github Link"
+              slots={{
+                transition: Zoom,
+              }}
+              arrow
+            >
+              <button className="inline-block px-2 py-2">
+                <FaGithub />
+              </button>
+            </Tooltip>
+            <Tooltip
+              title="Application Link"
+              slots={{
+                transition: Zoom,
+              }}
+              arrow
+            >
+              <button className="inline-block px-2 py-2">
+                <FaExternalLinkAlt />
+              </button>
+            </Tooltip>
+          </div>
         </div>
 
-        <div className="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+        <div className="flex items-center p-3 md:p-4 border-t border-gray-200 rounded-b dark:border-gray-600">
           <button
             type="button"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="ml-auto text-white bg-blue-700 duration-500 hover:bg-white hover:text-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:focus:ring-blue-800"
             onClick={() => setDetailModal(false)}
           >
             Close

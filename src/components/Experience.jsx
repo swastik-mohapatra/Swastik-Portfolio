@@ -5,33 +5,10 @@ import {
   import "../App.css";
   import "react-vertical-timeline-component/style.min.css";
   import { FaCircle } from "react-icons/fa6";
+import { experiences } from "../constants";
   // import { motion } from "framer-motion";
   
   const WorkIcon = () => <><FaCircle /></>;
-  
-  const experiences = [
-    {
-      id: 1,
-      title: "Associate Software Engineer",
-      company_name: "Incture",
-      duration: "January 2023 - present",
-      description: [
-        "Working as a Frontend Developer specializing in SAPUI5 and ReactJS and developed intuitive and responsive UI solutions tailored to customer requirements and product needs.",
-        "Designed dynamic user interfaces with a focus on scalability and usability.",
-        "Successfully delivered customer-focused projects and contributed to product development.",
-      ],
-    },
-    {
-      id: 2,
-      title: "Internship",
-      company_name: "Sahu Technologies",
-      duration: "June 2022 - July 2022",
-      description: [
-        "Worked as a Frontend Developer.",
-        "Designed templates provided by the company as internship tasks.",
-      ],
-    },
-  ];
   
   const Experience = () => {
     return (
