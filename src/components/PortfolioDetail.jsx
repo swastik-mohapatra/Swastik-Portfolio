@@ -1,11 +1,18 @@
 import { Chip, Stack, Tooltip, Zoom } from "@mui/material";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 /* eslint-disable react/prop-types */
 const PortfolioDetail = ({ setDetailModal, portfolioItem }) => {
   return (
     <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="relative bg-white rounded-lg shadow dark:bg-gray-700 max-w-4xl">
+      <motion.div
+        initial={{ y: "100%", opacity: 0 }}
+        animate={{ y: "0%", opacity: 1 }}
+        exit={{ y: "100%", opacity: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="relative bg-white rounded-lg shadow dark:bg-gray-700 max-w-4xl"
+      >
         <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
             {portfolioItem?.portfolioName}
@@ -91,7 +98,7 @@ const PortfolioDetail = ({ setDetailModal, portfolioItem }) => {
             Close
           </button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
