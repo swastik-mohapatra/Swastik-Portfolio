@@ -1,6 +1,7 @@
 import { Chip, Stack, Tooltip, Zoom } from "@mui/material";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Bounce, toast, ToastContainer } from "react-toastify";
 
 /* eslint-disable react/prop-types */
 const PortfolioDetail = ({ setDetailModal, portfolioItem }) => {
@@ -50,7 +51,9 @@ const PortfolioDetail = ({ setDetailModal, portfolioItem }) => {
         </div>
         <div className="p-4 md:p-5 space-y-4">
           <div className="flex flex-row gap-4 text-sm">
-            <p className="mt-1 whitespace-nowrap font-bold text-lg">Tech Stacks:</p>
+            <p className="mt-1 whitespace-nowrap font-bold text-lg">
+              Tech Stacks:
+            </p>
             <Stack direction="row" spacing={1}>
               {portfolioItem?.stacks?.map((item, index) => (
                 <Chip
@@ -63,15 +66,34 @@ const PortfolioDetail = ({ setDetailModal, portfolioItem }) => {
             </Stack>
           </div>
           <div className="flex flex-row gap-3 text-sm">
-            <p className=" whitespace-nowrap font-bold text-lg">Related Links:</p>
+            <p className=" whitespace-nowrap font-bold text-lg">
+              Related Links:
+            </p>
             <Tooltip
-              title="Github Link"
+              title="Repository Link"
               slots={{
                 transition: Zoom,
               }}
               arrow
             >
-              <button className="inline-block px-2 py-2">
+              <button
+                className="inline-block px-2 py-2"
+                onClick={() => {
+                  portfolioItem?.repoLink
+                    ? window.open(portfolioItem?.repoLink, "_blank")
+                    : toast.warn(" Repo Link does not exist", {
+                        position: "top-center",
+                        autoClose: 1500,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "dark",
+                        transition: Bounce,
+                      });
+                }}
+              >
                 <FaGithub />
               </button>
             </Tooltip>
@@ -82,7 +104,24 @@ const PortfolioDetail = ({ setDetailModal, portfolioItem }) => {
               }}
               arrow
             >
-              <button className="inline-block px-2 py-2">
+              <button
+                className="inline-block px-2 py-2"
+                onClick={() => {
+                  portfolioItem?.appLink
+                    ? window.open(portfolioItem?.appLink, "_blank")
+                    : toast.warn(" Repo Link does not exist", {
+                        position: "top-center",
+                        autoClose: 1500,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "dark",
+                        transition: Bounce,
+                      });
+                }}
+              >
                 <FaExternalLinkAlt />
               </button>
             </Tooltip>
@@ -99,6 +138,7 @@ const PortfolioDetail = ({ setDetailModal, portfolioItem }) => {
           </button>
         </div>
       </motion.div>
+      <ToastContainer />
     </div>
   );
 };

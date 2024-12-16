@@ -3,6 +3,9 @@ import PortfolioDetail from "./PortfolioDetail";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { Tooltip, Zoom } from "@mui/material";
 import { portfolioData } from "../constants";
+import { Bounce, toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const Portfolio = () => {
   const [detailModal, setDetailModal] = useState(false);
@@ -39,13 +42,30 @@ const Portfolio = () => {
                       Read more
                     </button>
                     <Tooltip
-                      title="Github Link"
+                      title="Repository Link"
                       slots={{
                         transition: Zoom,
                       }}
                       arrow
                     >
-                      <button className="inline-block px-2 py-2">
+                      <button
+                        className="inline-block px-2 py-2"
+                        onClick={() => {
+                          item?.repoLink
+                            ? window.open(item?.repoLink, "_blank")
+                            : toast.warn(' Repo Link does not exist', {
+                              position: "top-center",
+                              autoClose: 1500,
+                              hideProgressBar: false,
+                              closeOnClick: true,
+                              pauseOnHover: true,
+                              draggable: true,
+                              progress: undefined,
+                              theme: "dark",
+                              transition: Bounce,
+                              });
+                        }}
+                      >
                         <FaGithub />
                       </button>
                     </Tooltip>
@@ -59,7 +79,24 @@ const Portfolio = () => {
                       }}
                       arrow
                     >
-                      <button className="inline-block px-2 py-2">
+                      <button
+                        className="inline-block px-2 py-2"
+                        onClick={() => {
+                          item?.appLink
+                            ? window.open(item?.appLink, "_blank")
+                            : toast.warn('Link does not exist', {
+                              position: "top-center",
+                              autoClose: 1500,
+                              hideProgressBar: false,
+                              closeOnClick: true,
+                              pauseOnHover: true,
+                              draggable: true,
+                              progress: undefined,
+                              theme: "dark",
+                              transition: Bounce,
+                              });
+                        }}
+                      >
                         <FaExternalLinkAlt />
                       </button>
                     </Tooltip>
@@ -105,6 +142,7 @@ const Portfolio = () => {
           portfolioItem={modalDetail}
         />
       )}
+      <ToastContainer />
     </div>
   );
 };

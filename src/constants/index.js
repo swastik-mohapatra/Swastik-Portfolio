@@ -169,6 +169,8 @@ export const portfolioData = [
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus a obcaecati cum modi, reprehenderit, et soluta molestiae saepe necessitatibus enim quo nostrum officiis aliquam!",
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus a obcaecati cum modi, reprehenderit, et soluta molestiae saepe necessitatibus enim quo nostrum officiis aliquam!",
       ],
+      appLink:"",
+      repoLink:""
     },
     {
       id: 2,
@@ -183,6 +185,8 @@ export const portfolioData = [
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus a obcaecati cum modi, reprehenderit, et soluta molestiae saepe necessitatibus enim quo nostrum officiis aliquam!",
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus a obcaecati cum modi, reprehenderit, et soluta molestiae saepe necessitatibus enim quo nostrum officiis aliquam!",
       ],
+      appLink:"",
+      repoLink:""
     },
     {
       id: 3,
@@ -196,5 +200,7 @@ export const portfolioData = [
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus a obcaecati cum modi, reprehenderit, et soluta molestiae saepe necessitatibus enim quo nostrum officiis aliquam!",
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus a obcaecati cum modi, reprehenderit, et soluta molestiae saepe necessitatibus enim quo nostrum officiis aliquam!",
       ],
+      appLink:"https://my-fitness-app-j1kn-l2j2twf7k-swastik-mohapatras-projects.vercel.app/",
+      repoLink:"https://github.com/swastik-mohapatra/my-fitness-app"
     },
   ];
