@@ -77,7 +77,7 @@ const Contact = () => {
               className="w-full md:w-[33rem]"
             />
           </div>
-          <button type="button" className="bg-blue-900 p-4 w-full md:w-[33rem]">Send</button>
+          <button type="button" className="bg-blue-800 rounded-lg hover:bg-white hover:text-blue-800 duration-500 focus:ring-4 focus:outline-none focus:ring-blue-300 p-4 w-full md:w-[33rem]">Send</button>
         </div>
         </div>
       </div>
