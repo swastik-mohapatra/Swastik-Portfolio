@@ -1,10 +1,21 @@
+/* eslint-disable react/prop-types */
 import Typewriter from "typewriter-effect";
 // import AIPIC from "../assets/images/comp5.png";
 import Spline from "@splinetool/react-spline";
+import {motion} from 'framer-motion'
 
-function Home() {
+function Home({mainControls}) {
   return (
     <div name="home">
+      <motion.div 
+       variants={{
+        hidden:{opacity:0,y:75},
+        visible:{opacity:1,y:0}
+       }}
+       initial="hidden"
+       animate={mainControls}
+       transition={{duration:0.5, delay:0.25}}
+      >
       <div className="py-10 ">
         <div className="md:flex md:justify-between md:items-center flex-none grid grid-cols-1 md:grid-cols-0 gap-2 ">
           <div className="ml-0 md:ml-6 md:mt-5 leading-relaxed">
@@ -53,6 +64,7 @@ function Home() {
           </div>
         </div>
       </div>
+      </motion.div>
     </div>
   );
 }

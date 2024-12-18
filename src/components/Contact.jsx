@@ -3,12 +3,12 @@ import { TextField } from "@mui/material";
 const Contact = () => {
   return (
     <div name="contact" className="py-10 w-full ">
-      <div className="mx-5 justify-center w-full h-full ">
+      <div className="mx-8 justify-center w-full h-full ">
       <h1 className="text-4xl font-bold">Contact</h1>
         <div className="bg-gray-800 p-8 grid lg:grid-cols-2 gap-8 rounded-lg shadow-lg shadow-slate-900 relative my-10">
           <div
             className="bg-black p-6 rounded-lg shadow-2xl relative lg:-left-12 lg:top-0 -top-12"
-            style={{ zIndex: 10 }}
+            // style={{ zIndex: 5 }}
           >
             <div className="space-y-6">
               <TextField
