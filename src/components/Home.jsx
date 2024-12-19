@@ -14,7 +14,7 @@ function Home({mainControls}) {
        }}
        initial="hidden"
        animate={mainControls}
-       transition={{duration:0.3, delay:0.15}}
+       transition={{duration:0.5, delay:0.25}}
       >
       <div className="py-10 ">
         <div className="md:flex md:justify-between md:items-center flex-none grid grid-cols-1 md:grid-cols-0 gap-2 ">

@@ -12,7 +12,7 @@ const Contact = ({mainControls}) => {
        }}
        initial="hidden"
        animate={mainControls}
-       transition={{duration:0.3, delay:0.15}}
+       transition={{duration:0.5, delay:0.25}}
       >
       <div className="mx-8 justify-center w-full h-full ">
       <h1 className="text-4xl font-bold">Contact</h1>
