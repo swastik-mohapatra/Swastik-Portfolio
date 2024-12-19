@@ -1,8 +1,19 @@
+/* eslint-disable react/prop-types */
 import { TextField } from "@mui/material";
+import { motion } from "framer-motion";
 
-const Contact = () => {
+const Contact = ({mainControls}) => {
   return (
     <div name="contact" className="py-10 w-full ">
+       <motion.div 
+       variants={{
+        hidden:{opacity:0,y:75},
+        visible:{opacity:1,y:0}
+       }}
+       initial="hidden"
+       animate={mainControls}
+       transition={{duration:0.3, delay:0.15}}
+      >
       <div className="mx-8 justify-center w-full h-full ">
       <h1 className="text-4xl font-bold">Contact</h1>
         <div className="bg-gray-800 p-8 grid lg:grid-cols-2 gap-8 rounded-lg shadow-lg shadow-slate-900 relative my-10">
@@ -76,6 +87,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      </motion.div>
     </div>
   );
 };

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import PortfolioDetail from "./PortfolioDetail";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
@@ -5,14 +6,24 @@ import { Tooltip, Zoom } from "@mui/material";
 import { portfolioData } from "../constants";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { motion } from "framer-motion";
 
 
-const Portfolio = () => {
+const Portfolio = ({mainControls}) => {
   const [detailModal, setDetailModal] = useState(false);
   const [modalDetail, setModalDetail] = useState(null);
 
   return (
     <div name="portfolio" className="py-10 w-full">
+       <motion.div 
+       variants={{
+        hidden:{opacity:0,y:75},
+        visible:{opacity:1,y:0}
+       }}
+       initial="hidden"
+       animate={mainControls}
+       transition={{duration:0.3, delay:0.15}}
+      >
       <div className="mx-5 justify-center w-full h-full">
         <h1 className="text-4xl font-bold">Portfolio</h1>
         <div className="my-10">
@@ -143,6 +154,7 @@ const Portfolio = () => {
         />
       )}
       <ToastContainer />
+      </motion.div>
     </div>
   );
 };
