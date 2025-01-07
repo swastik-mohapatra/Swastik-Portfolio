@@ -35,7 +35,7 @@ function Home({mainControls}) {
             </h1>
             <br />
             <p className="flex flex-col justify-center">
-              Crafting seamless user experiences through code mastery – welcome
+              Crafting seamless user experiences through code mastery – Welcome
               to the digital frontier of web design and software architecture.
             </p>
 

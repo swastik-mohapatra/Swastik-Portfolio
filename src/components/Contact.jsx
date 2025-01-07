@@ -16,7 +16,7 @@ const Contact = ({mainControls}) => {
       >
       <div className="mx-8 justify-center w-full h-full ">
       <h1 className="text-4xl font-bold">Contact</h1>
-        <div className="bg-gray-800 p-8 grid lg:grid-cols-2 gap-8 rounded-lg shadow-lg shadow-slate-900 relative my-10">
+        <div className="bg-gray-800 p-8 grid lg:grid-cols-2 gap-8 rounded-lg shadow shadow-slate-900 relative my-10">
           <div
             className="bg-black p-6 rounded-lg shadow-2xl relative lg:-left-12 lg:top-0 -top-12"
             // style={{ zIndex: 5 }}
@@ -66,7 +66,7 @@ const Contact = ({mainControls}) => {
                   textarea: { color: "white" },
                 }}
               />
-              <button className="w-full bg-blue-800 text-white py-2 rounded-lg hover:bg-white hover:text-blue-800 transition duration-300">
+              <button className="w-full bg-blue-800 text-white py-2 rounded-lg hover:bg-white hover:text-blue-800 transition duration-300 font-bold">
                 Submit
               </button>
             </div>
