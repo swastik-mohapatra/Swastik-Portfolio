@@ -20,11 +20,11 @@ const About = ({ mainControls }) => {
           <div className="my-6">
             <div className="md:flex md:justify-between md:items-center flex-none grid grid-cols-1 md:grid-cols-0 gap-10">
               <div>
-                <div className="about_img_container">
+                <div className="relative w-[300px] h-[340px] mx-auto my-2 ">
                   <img
                     src={AboutPic}
                     alt="My Profile"
-                    className="object-cover"
+                    className="absolute top-0 left-0 w-full h-full rounded-[12px] object-cover -z-10 shadow-lg shadow-slate-800"
                   />
                 </div>
               </div>

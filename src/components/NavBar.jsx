@@ -26,11 +26,14 @@ const NavBar = () => {
     <li className="cursor-pointer">
       <Link
         to={linkName.toLowerCase()}
+        spy
         smooth
         duration={500}
+        offset={-80} // Adjust offset to align with your section
         className={`transition duration-300 ease-in-out hover:text-orange-300 ${
           activeLink === linkName ? "text-orange-300" : ""
         }`}
+        onSetActive={() => setActiveLink(linkName)}
         onClick={() => handleClickNavbar(linkName)}
       >
         {activeLink === linkName ? `< ${linkName} >` : linkName}

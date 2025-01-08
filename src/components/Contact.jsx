@@ -1,92 +1,109 @@
 /* eslint-disable react/prop-types */
 import { TextField } from "@mui/material";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
-const Contact = ({mainControls}) => {
+const Contact = ({ mainControls }) => {
+  const [emailBody, setEmailBody] = useState({});
+
+  const onChangeInput = (e, name) => {
+    setEmailBody({ ...emailBody, [name]: e.target.value });
+  };
   return (
     <div name="contact" className="py-10 w-full ">
-       <motion.div 
-       variants={{
-        hidden:{opacity:0,y:75},
-        visible:{opacity:1,y:0}
-       }}
-       initial="hidden"
-       animate={mainControls}
-       transition={{duration:0.5, delay:0.25}}
+      <motion.div
+        variants={{
+          hidden: { opacity: 0, y: 75 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        animate={mainControls}
+        transition={{ duration: 0.5, delay: 0.25 }}
       >
-      <div className="mx-8 justify-center w-full h-full ">
-      <h1 className="text-4xl font-bold">Contact</h1>
-        <div className="bg-gray-800 p-8 grid lg:grid-cols-2 gap-8 rounded-lg shadow shadow-slate-900 relative my-10">
-          <div
-            className="bg-black p-6 rounded-lg shadow-2xl relative lg:-left-12 lg:top-0 -top-12"
-            // style={{ zIndex: 5 }}
-          >
-            <div className="space-y-6">
-              <TextField
-                label="Name"
-                variant="outlined"
-                fullWidth
-                InputLabelProps={{ style: { color: "white" } }}
-                sx={{
-                  "& .MuiOutlinedInput-root": {
-                    "& fieldset": { borderColor: "gray" },
-                    "&:hover fieldset": { borderColor: "white" },
-                    "&.Mui-focused fieldset": { borderColor: "white" },
-                  },
-                  input: { color: "white" },
-                }}
-              />
-              <TextField
-                label="Email"
-                variant="outlined"
-                fullWidth
-                InputLabelProps={{ style: { color: "white" } }}
-                sx={{
-                  "& .MuiOutlinedInput-root": {
-                    "& fieldset": { borderColor: "gray" },
-                    "&:hover fieldset": { borderColor: "white" },
-                    "&.Mui-focused fieldset": { borderColor: "white" },
-                  },
-                  input: { color: "white" },
-                }}
-              />
-              <TextField
-                label="Message"
-                variant="outlined"
-                fullWidth
-                multiline
-                rows={4}
-                InputLabelProps={{ style: { color: "white" } }}
-                sx={{
-                  "& .MuiOutlinedInput-root": {
-                    "& fieldset": { borderColor: "gray" },
-                    "&:hover fieldset": { borderColor: "white" },
-                    "&.Mui-focused fieldset": { borderColor: "white" },
-                  },
-                  textarea: { color: "white" },
-                }}
-              />
-              <button className="w-full bg-blue-800 text-white py-2 rounded-lg hover:bg-white hover:text-blue-800 transition duration-300 font-bold">
-                Submit
-              </button>
+        <div className="mx-8 justify-center w-full h-full ">
+          <h1 className="text-4xl font-bold">Contact</h1>
+          <div className="bg-gray-800 p-8 grid lg:grid-cols-2 gap-8 rounded-lg shadow shadow-slate-900 relative my-10">
+            <div
+              className="bg-black p-6 rounded-lg shadow-2xl relative lg:-left-12 lg:top-0 -top-12"
+            >
+              <div className="space-y-6">
+                <TextField
+                  label="Name"
+                  variant="outlined"
+                  fullWidth
+                  InputLabelProps={{ style: { color: "white" } }}
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      "& fieldset": { borderColor: "gray" },
+                      "&:hover fieldset": { borderColor: "white" },
+                      "&.Mui-focused fieldset": { borderColor: "white" },
+                    },
+                    input: { color: "white" },
+                  }}
+                  onChange={(e) => onChangeInput(e, "name")}
+                  value={emailBody["name"] || ""}
+                />
+                <TextField
+                  label="Email"
+                  variant="outlined"
+                  fullWidth
+                  InputLabelProps={{ style: { color: "white" } }}
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      "& fieldset": { borderColor: "gray" },
+                      "&:hover fieldset": { borderColor: "white" },
+                      "&.Mui-focused fieldset": { borderColor: "white" },
+                    },
+                    input: { color: "white" },
+                  }}
+                  onChange={(e) => onChangeInput(e, "email")}
+                  value={emailBody["email"] || ""}
+                />
+                <TextField
+                  label="Message"
+                  variant="outlined"
+                  fullWidth
+                  multiline
+                  rows={4}
+                  InputLabelProps={{ style: { color: "white" } }}
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      "& fieldset": { borderColor: "gray" },
+                      "&:hover fieldset": { borderColor: "white" },
+                      "&.Mui-focused fieldset": { borderColor: "white" },
+                    },
+                    textarea: { color: "white" },
+                  }}
+                  onChange={(e) => onChangeInput(e, "message")}
+                  value={emailBody["message"] || ""}
+                />
+                <button
+                  className="w-full bg-blue-800 text-white py-2 rounded-lg hover:bg-white hover:text-blue-800 transition duration-300 font-bold"
+                  onClick={() => {
+                    console.log(emailBody);
+                    setEmailBody({});
+                  }}
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+
+            {/* Right Section: Text */}
+            <div className="flex flex-col justify-center">
+              <h1 className="text-5xl font-bold mb-4">Get In Touch</h1>
+              <p className="text-lg mb-4">
+                Feel free to Contact me by submitting the form below and I will
+                get back to you as soon as possible.
+              </p>
+              <p className="text-sm text-gray-400">
+                Even if it is not related to new opportunities, my inbox is
+                always open. Whether you want to say hi or have a question, I
+                will try my best to get back to you.
+              </p>
             </div>
           </div>
-
-          {/* Right Section: Text */}
-          <div className="flex flex-col justify-center">
-            <h1 className="text-5xl font-bold mb-4">Get In Touch</h1>
-            <p className="text-lg mb-4">
-              Feel free to Contact me by submitting the form below and I will
-              get back to you as soon as possible.
-            </p>
-            <p className="text-sm text-gray-400">
-              Even if it is not related to new opportunities, my inbox is always
-              open. Whether you want to say hi or have a question, I will try my
-              best to get back to you.
-            </p>
-          </div>
         </div>
-      </div>
       </motion.div>
     </div>
   );
