@@ -53,8 +53,9 @@ const About = ({ mainControls }) => {
                 <br />
               </div>
             </div>
+            <Education />
           </div>
-          <Education />
+          
         </div>
       </motion.div>
     </div>
