@@ -4,14 +4,14 @@ import { educationData } from "../constants";
 
 const Education = () => {
   return (
-    <div className="mt-3">
+    <div className="mt-7">
       {/* <h1 className="text-2xl font-bold">Education</h1>
       <HorizontalEducation educationData={educationData} />
       <VerticalEducation educationData={educationData} /> */}
 
-      <div className="w-full min-w-2xl p-2 bg-white border border-gray-200 rounded-lg shadow sm:p-4 dark:bg-gray-800 dark:border-gray-700">
+      <div className="w-full min-w-2xl p-2 bg-white border border-gray-200 rounded-lg shadow sm:p-5 dark:bg-gray-800 dark:border-gray-700">
         <div className="flex items-center justify-between mb-4">
-          <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">
+          <h5 className="text-2xl font-bold leading-none text-gray-900 dark:text-white">
             Education
           </h5>
         </div>
@@ -23,7 +23,7 @@ const Education = () => {
             {educationData.map((item) => {
               return (
                 <li key={item?.id} className="py-1 sm:py-1">
-                  <div className="flex items-center">
+                  <div className="md:flex items-center">
                     <div className="flex-1">
                       <p className="text-lg font-medium text-gray-900  dark:text-white">
                         {item?.class_name}

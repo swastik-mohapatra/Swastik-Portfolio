@@ -19,36 +19,41 @@ const About = ({ mainControls }) => {
           <h1 className="text-4xl font-bold">About Me</h1>
           <div className="my-6">
             <div className="md:flex md:justify-between md:items-start gap-10">
-              {/* Image Section */}
-              <div className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3">
+              <div className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 ">
                 <div className="relative aspect-w-3 aspect-h-4">
                   <img
                     src={AboutPic}
                     alt="My Profile"
-                    className="rounded-[12px] object-cover shadow-lg shadow-slate-800"
+                    className="rounded-[12px] object-cover shadow-lg shadow-slate-800 "
                   />
                 </div>
               </div>
 
-              {/* Text Section */}
-              <div className="flex-1">
-                <p>
-                  Welcome to my digital space! I&apos;m passionate about
-                  bringing ideas to life through code and creativity. With a
-                  background in Information Technology, I specialize in crafting
-                  seamless user experiences and architecting robust software
-                  solutions. Driven by curiosity and a relentless pursuit of
-                  excellence, I am constantly exploring new technologies and
-                  pushing the boundaries of what&apos;s possible. Collaboration
-                  is at the heart of everything I do.
+              <div>
+                <div className="flex-1 mt-3 md:mt-0">
+                  <p>
+                    Welcome to my digital space! I&apos;m passionate about
+                    bringing ideas to life through code and creativity. With a
+                    background in Information Technology, I specialize in
+                    crafting seamless user experiences and architecting robust
+                    software solutions. Driven by curiosity and a relentless
+                    pursuit of excellence, I am constantly exploring new
+                    technologies and pushing the boundaries of what&apos;s
+                    possible. Collaboration is at the heart of everything I do.
+                    <br />
+                    Beyond the screen, you&apos;ll find me exploring the
+                    outdoors, engaging in regular workouts, or indulging myself
+                    in fun activities.
+                  </p>
                   <br />
-                  Beyond the screen, you&apos;ll find me exploring the outdoors,
-                  engaging in regular workouts, or indulging myself in fun
-                  activities.
-                </p>
-                <br />
-                <Education />
+                </div>
+                <div className="hidden lg:block">
+                  <Education />
+                </div>
               </div>
+            </div>
+            <div className="lg:hidden block">
+              <Education />
             </div>
           </div>
         </div>
@@ -58,5 +63,3 @@ const About = ({ mainControls }) => {
 };
 
 export default About;
-
-

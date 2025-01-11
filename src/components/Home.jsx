@@ -16,8 +16,8 @@ function Home({mainControls}) {
        animate={mainControls}
        transition={{duration:0.5, delay:0.25}}
       >
-      <div className="py-10 ">
-        <div className="md:flex md:justify-between md:items-center flex-none grid grid-cols-1 md:grid-cols-0 gap-2 ">
+      <div className="py-10">
+        <div className="md:flex md:justify-between md:items-center flex-none grid grid-cols-1 md:grid-cols-0 gap-2">
           <div className="ml-0 md:ml-6 md:mt-5 leading-relaxed">
             <h1 className="text-4xl font-bold leading-normal">Hi,</h1>
             <h1 className="text-4xl font-bold leading-normal">
@@ -50,8 +50,8 @@ function Home({mainControls}) {
               </button>
             </div>
           </div>
-          <div className="ml-0 md:ml-20 justify-center items-center text-center">
-            <div className="w-full">
+          <div className="ml-0 md:ml-16 justify-center items-center text-center">
+            <div className="w-full hidden md:block">
               {/* <img
                 src={AIPIC}
                 alt="My Profile"
