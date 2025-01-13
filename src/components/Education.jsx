@@ -9,7 +9,7 @@ const Education = () => {
       <HorizontalEducation educationData={educationData} />
       <VerticalEducation educationData={educationData} /> */}
 
-      <div className="w-full min-w-2xl p-2 bg-white border border-gray-200 rounded-lg shadow sm:p-5 dark:bg-gray-800 dark:border-gray-700">
+      <div className="w-full min-w-2xl p-3 bg-white border border-gray-200 rounded-lg shadow sm:p-5 dark:bg-gray-800 dark:border-gray-700">
         <div className="flex items-center justify-between mb-4">
           <h5 className="text-2xl font-bold leading-none text-gray-900 dark:text-white">
             Education

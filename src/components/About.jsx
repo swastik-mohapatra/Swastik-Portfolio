@@ -30,7 +30,7 @@ const About = ({ mainControls }) => {
               </div>
 
               <div>
-                <div className="flex-1 mt-3 md:mt-0">
+                <div className="flex-1 mt-2 md:mt-0">
                   <p>
                     Welcome to my digital space! I&apos;m passionate about
                     bringing ideas to life through code and creativity. With a
@@ -47,12 +47,12 @@ const About = ({ mainControls }) => {
                   </p>
                   <br />
                 </div>
-                <div className="hidden lg:block">
+                <div className="hidden xl:block">
                   <Education />
                 </div>
               </div>
             </div>
-            <div className="lg:hidden block">
+            <div className="xl:hidden block">
               <Education />
             </div>
           </div>

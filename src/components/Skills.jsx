@@ -25,7 +25,7 @@ const Skills = ({ mainControls }) => {
                   className={`shadow-md bg-gray-700 hover:bg-white hover:text-black hover:shadow-xl duration-500 p-2 w-40 h-full mx-auto text-center cursor-pointer rounded-lg shadow-slate-500 ${style} `}
                 >
                   <img src={src} alt="" className="w-16 mx-auto my-3" />
-                  <p className="mt-4">{title}</p>
+                  <p className="mt-4 font-bold">{title}</p>
                   <p className="mt-1 flex flex-row justify-center">
                     <Rating
                       name="read-only"
