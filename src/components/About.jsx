@@ -4,6 +4,7 @@ import Education from "./Education";
 import { motion } from "framer-motion";
 
 const About = ({ mainControls }) => {
+  
   return (
     <div name="about" className="py-10 w-full">
       <motion.div

@@ -6,9 +6,39 @@ import { useState } from "react";
 const Contact = ({ mainControls }) => {
   const [emailBody, setEmailBody] = useState({});
 
+  const baseUrl = "http://localhost:8080";
+
   const onChangeInput = (e, name) => {
     setEmailBody({ ...emailBody, [name]: e.target.value });
   };
+
+  const sendEmail = async () => {
+    try {
+      const res = await fetch(`${baseUrl}/email/sendEmail`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(emailBody),
+      });
+  
+      if (res.ok) {
+        const data = await res.json();
+        console.log("Email sent successfully:", data);
+        alert("Email sent successfully!");
+        setEmailBody({}); 
+      } else {
+        const errorData = await res.json();
+        console.error("Error from server:", errorData);
+        alert("Failed to send email. Please try again.");
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+      alert("An unexpected error occurred. Please try again.");
+    }
+  };
+  
+  
   return (
     <div name="contact" className="py-10 w-full ">
       <motion.div
@@ -80,8 +110,11 @@ const Contact = ({ mainControls }) => {
                 <button
                   className="w-full bg-blue-800 text-white py-2 rounded-lg hover:bg-white hover:text-blue-800 transition duration-300 font-bold"
                   onClick={() => {
-                    console.log(emailBody);
-                    setEmailBody({});
+                    if (!emailBody.name || !emailBody.email || !emailBody.message) {
+                      alert("Please fill in all fields.");
+                      return;
+                    }
+                    sendEmail();
                   }}
                 >
                   Submit
