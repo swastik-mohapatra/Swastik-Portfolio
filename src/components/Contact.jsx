@@ -2,17 +2,21 @@
 import { TextField } from "@mui/material";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Swal from "sweetalert2";
+import CircleLoader from "react-spinners/CircleLoader";
 
 const Contact = ({ mainControls }) => {
   const [emailBody, setEmailBody] = useState({});
+  const [loading, setLoading] = useState(false); 
 
-  const baseUrl = "http://localhost:8080";
+  const baseUrl = "https://email-service-1-kxjb.onrender.com";
 
   const onChangeInput = (e, name) => {
     setEmailBody({ ...emailBody, [name]: e.target.value });
   };
 
   const sendEmail = async () => {
+    setLoading(true); 
     try {
       const res = await fetch(`${baseUrl}/email/sendEmail`, {
         method: "POST",
@@ -21,26 +25,43 @@ const Contact = ({ mainControls }) => {
         },
         body: JSON.stringify(emailBody),
       });
-  
+
       if (res.ok) {
         const data = await res.json();
         console.log("Email sent successfully:", data);
-        alert("Email sent successfully!");
-        setEmailBody({}); 
+        Swal.fire({
+          title: data?.message,
+          background: "#1f2937",
+          color: "#fff",
+          icon: "success",
+        });
+        setEmailBody({});
       } else {
         const errorData = await res.json();
         console.error("Error from server:", errorData);
-        alert("Failed to send email. Please try again.");
+        Swal.fire({
+          title: "Error in sending mail",
+          text: errorData?.error,
+          background: "#1f2937",
+          color: "#fff",
+          icon: "error",
+        });
       }
     } catch (error) {
       console.error("An error occurred:", error);
-      alert("An unexpected error occurred. Please try again.");
+      Swal.fire({
+        title: error?.message,
+        background: "#1f2937",
+        color: "#fff",
+        icon: "error",
+      });
+    } finally {
+      setLoading(false); 
     }
   };
-  
-  
+
   return (
-    <div name="contact" className="py-10 w-full ">
+    <div name="contact" className="py-10 w-full">
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },
@@ -50,12 +71,10 @@ const Contact = ({ mainControls }) => {
         animate={mainControls}
         transition={{ duration: 0.5, delay: 0.25 }}
       >
-        <div className="mx-8 justify-center w-full h-full ">
+        <div className="mx-8 justify-center w-full h-full">
           <h1 className="text-4xl font-bold">Contact</h1>
           <div className="bg-gray-800 p-8 grid lg:grid-cols-2 gap-8 rounded-lg shadow shadow-slate-900 relative my-10">
-            <div
-              className="bg-black p-6 rounded-lg shadow-2xl relative lg:-left-12 lg:top-0 -top-12"
-            >
+            <div className="bg-black p-6 rounded-lg shadow-2xl relative lg:-left-12 lg:top-0 -top-12">
               <div className="space-y-6">
                 <TextField
                   label="Name"
@@ -110,19 +129,28 @@ const Contact = ({ mainControls }) => {
                 <button
                   className="w-full bg-blue-800 text-white py-2 rounded-lg hover:bg-white hover:text-blue-800 transition duration-300 font-bold"
                   onClick={() => {
-                    if (!emailBody.name || !emailBody.email || !emailBody.message) {
-                      alert("Please fill in all fields.");
+                    if (
+                      !emailBody.name ||
+                      !emailBody.email ||
+                      !emailBody.message
+                    ) {
+                      Swal.fire({
+                        title: "Please fill in all fields.",
+                        background: "#1f2937",
+                        color: "#fff",
+                        icon: "warning",
+                      });
                       return;
                     }
                     sendEmail();
                   }}
+                  disabled={loading} 
                 >
-                  Submit
+                  {loading ? "Sending..." : "Submit"}
                 </button>
               </div>
             </div>
 
-            {/* Right Section: Text */}
             <div className="flex flex-col justify-center">
               <h1 className="text-5xl font-bold mb-4">Get In Touch</h1>
               <p className="text-lg mb-4">
@@ -136,6 +164,11 @@ const Contact = ({ mainControls }) => {
               </p>
             </div>
           </div>
+          {loading && (
+            <div className="fixed top-0 left-0 w-full h-full bg-black opacity-85 flex justify-center items-center z-50">
+              <CircleLoader color="#fff" size={100} />
+            </div>
+          )}
         </div>
       </motion.div>
     </div>
