@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
-import { TextField } from "@mui/material";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import CircleLoader from "react-spinners/CircleLoader";
+import ContactTextFields from "../utils/ContactTextFields";
 
 const Contact = ({ mainControls }) => {
   const [emailBody, setEmailBody] = useState({});
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
 
   const baseUrl = "https://email-service-1-kxjb.onrender.com";
 
@@ -16,7 +16,7 @@ const Contact = ({ mainControls }) => {
   };
 
   const sendEmail = async () => {
-    setLoading(true); 
+    setLoading(true);
     try {
       const res = await fetch(`${baseUrl}/email/sendEmail`, {
         method: "POST",
@@ -56,7 +56,7 @@ const Contact = ({ mainControls }) => {
         icon: "error",
       });
     } finally {
-      setLoading(false); 
+      setLoading(false);
     }
   };
 
@@ -76,55 +76,25 @@ const Contact = ({ mainControls }) => {
           <div className="bg-gray-800 p-8 grid lg:grid-cols-2 gap-8 rounded-lg shadow shadow-slate-900 relative my-10">
             <div className="bg-black p-6 rounded-lg shadow-2xl relative lg:-left-12 lg:top-0 -top-12">
               <div className="space-y-6">
-                <TextField
+                <ContactTextFields
                   label="Name"
-                  variant="outlined"
-                  fullWidth
-                  InputLabelProps={{ style: { color: "white" } }}
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      "& fieldset": { borderColor: "gray" },
-                      "&:hover fieldset": { borderColor: "white" },
-                      "&.Mui-focused fieldset": { borderColor: "white" },
-                    },
-                    input: { color: "white" },
-                  }}
-                  onChange={(e) => onChangeInput(e, "name")}
-                  value={emailBody["name"] || ""}
+                  name="name"
+                  value={emailBody["name"]}
+                  onChange={onChangeInput}
                 />
-                <TextField
+                <ContactTextFields
                   label="Email"
-                  variant="outlined"
-                  fullWidth
-                  InputLabelProps={{ style: { color: "white" } }}
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      "& fieldset": { borderColor: "gray" },
-                      "&:hover fieldset": { borderColor: "white" },
-                      "&.Mui-focused fieldset": { borderColor: "white" },
-                    },
-                    input: { color: "white" },
-                  }}
-                  onChange={(e) => onChangeInput(e, "email")}
-                  value={emailBody["email"] || ""}
+                  name="email"
+                  value={emailBody["email"]}
+                  onChange={onChangeInput}
                 />
-                <TextField
+                <ContactTextFields
                   label="Message"
-                  variant="outlined"
-                  fullWidth
+                  name="message"
+                  value={emailBody["message"]}
+                  onChange={onChangeInput}
                   multiline
                   rows={4}
-                  InputLabelProps={{ style: { color: "white" } }}
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      "& fieldset": { borderColor: "gray" },
-                      "&:hover fieldset": { borderColor: "white" },
-                      "&.Mui-focused fieldset": { borderColor: "white" },
-                    },
-                    textarea: { color: "white" },
-                  }}
-                  onChange={(e) => onChangeInput(e, "message")}
-                  value={emailBody["message"] || ""}
                 />
                 <button
                   className="w-full bg-blue-800 text-white py-2 rounded-lg hover:bg-white hover:text-blue-800 transition duration-300 font-bold"
@@ -144,7 +114,7 @@ const Contact = ({ mainControls }) => {
                     }
                     sendEmail();
                   }}
-                  disabled={loading} 
+                  disabled={loading}
                 >
                   {loading ? "Sending..." : "Submit"}
                 </button>
