@@ -3,6 +3,7 @@ import Typewriter from "typewriter-effect";
 // import AIPIC from "../assets/images/comp5.png";
 import Spline from "@splinetool/react-spline";
 import { motion } from "framer-motion";
+import resume from "../assets/files/Swastik-Mohapatra-Resume.pdf";
 
 function Home({ mainControls }) {
   return (
@@ -41,18 +42,17 @@ function Home({ mainControls }) {
               </p>
 
               <div className="flex flex-row gap-6 sm:ml-[-4px] mt-7">
-                <a
-                  href="src/assets/files/Swastik-Mohapatra-Resume.pdf"
-                  target="_blank"
-                >
                   <button
-                    href="src/assets/files/Swastik-Mohapatra-Resume.pdf"
-                    target="_blank"
+                    onClick={() => {
+                      const link = document.createElement("a");
+                      link.href = resume
+                      link.download = "Swastik_Resume.pdf"; 
+                      link.click();
+                    }}
                     className=" bg-indigo-500 text-gray-100 p-3 text-sm  rounded-lg tracking-wide font-semibold  focus:outline-none focus:shadow-outline hover:bg-white hover:text-indigo-600 shadow-lg cursor-pointer transition ease-in duration-300"
                   >
                     Download Resume
                   </button>
-                </a>
                 <button
                   onClick={() => {
                     const contactSection =
