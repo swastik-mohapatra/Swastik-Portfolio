@@ -9,6 +9,7 @@ import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import { useAnimation, useInView } from "framer-motion";
 import { useRef } from "react";
+import ScrollButton from "./components/ScrollButton";
 
 const useSectionAnimation = () => {
   const ref = useRef(null);
@@ -41,6 +42,7 @@ function App() {
         ))}
       </div>
       <SocialLinks2 />
+      <ScrollButton/>
     </div>
   );
 }
