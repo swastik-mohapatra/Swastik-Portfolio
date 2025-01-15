@@ -29,8 +29,8 @@ const NavBar = () => {
         spy
         smooth
         duration={500}
-        offset={-80} // Adjust offset to align with your section
-        className={`transition duration-300 ease-in-out hover:text-orange-300 ${
+        offset={-80} 
+        className={`transition duration-300 text-sm lg:text-base ease-in-out hover:text-orange-300 ${
           activeLink === linkName ? "text-orange-300" : ""
         }`}
         onSetActive={() => setActiveLink(linkName)}

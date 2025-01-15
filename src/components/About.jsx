@@ -20,7 +20,7 @@ const About = ({ mainControls }) => {
           <h1 className="text-4xl font-bold">About Me</h1>
           <div className="my-6">
             <div className="md:flex md:justify-between md:items-start gap-10">
-              <div className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 xl:w-1/4 ">
+              <div className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 2xl:w-1/4 ">
                 <div className="relative aspect-w-3 aspect-h-4">
                   <img
                     src={AboutPic}
@@ -31,7 +31,7 @@ const About = ({ mainControls }) => {
               </div>
 
               <div>
-                <div className="flex-1 mt-2 md:mt-0">
+                <div className="flex-1 mt-2 md:mt-0 lg:leading-loose xl:leading-normal 2xl:leading-loose">
                   <p>
                     Welcome to my digital space! I&apos;m passionate about
                     bringing ideas to life through code and creativity. With a
