@@ -1,4 +1,4 @@
-import { Chip, Stack, Tooltip, Zoom } from "@mui/material";
+import { Chip, Tooltip, Zoom } from "@mui/material";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { Bounce, toast, ToastContainer } from "react-toastify";
@@ -12,7 +12,7 @@ const PortfolioDetail = ({ setDetailModal, portfolioItem }) => {
         animate={{ y: "0%", opacity: 1 }}
         exit={{ y: "100%", opacity: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="relative bg-white rounded-lg shadow dark:bg-gray-700 max-w-4xl"
+        className="relative bg-white rounded-lg shadow dark:bg-gray-700 overflow-x-scroll md:max-w-3xl max-h-svh max-w-md"
       >
         <div className="flex items-center justify-between p-2 md:p-3 border-b rounded-t dark:border-gray-600">
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
@@ -27,7 +27,7 @@ const PortfolioDetail = ({ setDetailModal, portfolioItem }) => {
           </button>
         </div>
 
-        <div className="p-4 md:p-4 space-y-4 grid grid-cols-2 gap-6">
+        <div className="p-4 md:p-4 space-y-4 grid md:grid-cols-2 grid-cols-1 gap-6">
           <div>
             <p className="text-sm leading-relaxed">
               {portfolioItem?.description}
@@ -43,7 +43,7 @@ const PortfolioDetail = ({ setDetailModal, portfolioItem }) => {
               ))}
             </ul>
           </div>
-          <div className="ml-auto">
+          <div className="md:ml-auto flex justify-center">
             <img
               className="rounded-md shadow-md shadow-gray-800 object-cover"
               height="250"
@@ -58,16 +58,25 @@ const PortfolioDetail = ({ setDetailModal, portfolioItem }) => {
             <p className="mt-1 whitespace-nowrap font-bold text-lg">
               Tech Stacks:
             </p>
-            <Stack direction="row" spacing={1}>
+            <div className="grid grid-cols-3 sm:grid-cols-0 md:flex md:flex-row gap-1">
               {portfolioItem?.stacks?.map((item, index) => (
+                <Tooltip
+                key={index}
+                title={item}
+                slots={{
+                  transition: Zoom,
+                }}
+                arrow
+              >
                 <Chip
                   key={index}
                   label={item}
                   color="warning"
                   variant="outlined"
                 />
+                </Tooltip>
               ))}
-            </Stack>
+            </div>
           </div>
           <div className="flex flex-row gap-3 text-sm">
             <p className=" whitespace-nowrap font-bold text-lg">
