@@ -58,23 +58,15 @@ const PortfolioDetail = ({ setDetailModal, portfolioItem }) => {
             <p className="mt-1 whitespace-nowrap font-bold text-lg">
               Tech Stacks:
             </p>
-            <div className="grid grid-cols-3 sm:grid-cols-0 md:flex md:flex-row gap-1">
+            <div className="flex flex-wrap gap-2">
               {portfolioItem?.stacks?.map((item, index) => (
-                <Tooltip
-                key={index}
-                title={item}
-                slots={{
-                  transition: Zoom,
-                }}
-                arrow
-              >
                 <Chip
                   key={index}
                   label={item}
                   color="warning"
                   variant="outlined"
+                  className="w-max"
                 />
-                </Tooltip>
               ))}
             </div>
           </div>
