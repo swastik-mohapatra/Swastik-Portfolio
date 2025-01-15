@@ -151,29 +151,29 @@ export const portfolioData = [
     id: 1,
     portfolioName: "Journal Entry Automation",
     description:
-      "The application was built for a US based chemical company to automate journal entry posting in SAP environment.",
+      "The application was built for a US based chemical company to automate manual journals posting in SAP environment.",
     imageLink: "https://i.ytimg.com/vi/GMCmqb9MHqA/sddefault.jpg",
     stacks: ["ReactJS", "Java", "SAP ABAP", "SAP Workflow", "SAP BTP"],
     details: [
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus a obcaecati cum modi, reprehenderit, et soluta molestiae saepe necessitatibus enim quo nostrum officiis aliquam!",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus a obcaecati cum modi, reprehenderit, et soluta molestiae saepe necessitatibus enim quo nostrum officiis aliquam!",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus a obcaecati cum modi, reprehenderit, et soluta molestiae saepe necessitatibus enim quo nostrum officiis aliquam!",
+      "Manual journal entries ensure accurate financial transactions and proper recognition in the company's accounting records.",
+      "Upon selection, business unit-specific forms are presented in SAP BTP for the requester to complete and submit, triggering an automated workflow with user tasks in the SAP BTP inbox.",
+      "Tasks from the SAP BTP inbox are reviewed, approved, or forwarded in an integrated app. Actions are synchronized with SAP ECC, creating a posted document via a transaction code.",
     ],
     appLink: "",
     repoLink: "",
   },
   {
     id: 2,
-    portfolioName: "Price Card Harmonisation",
+    portfolioName: "Price Card Generation",
     description:
       "The application was designed for a Singapore based retail chain to facilitate generation of price card (offers and discount) for various commodities sold in their stores.",
     imageLink:
       "https://onecms-res.cloudinary.com/image/upload/s--E3ujKPa_--/f_auto,q_auto/c_fill,g_auto,h_622,w_830/v1/tdy-migration/img_5336.jpg?itok=LjQj4mY9",
     stacks: ["SAP UI5", "CAPM NodeJS", "SAP BTP"],
     details: [
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus a obcaecati cum modi, reprehenderit, et soluta molestiae saepe necessitatibus enim quo nostrum officiis aliquam!",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus a obcaecati cum modi, reprehenderit, et soluta molestiae saepe necessitatibus enim quo nostrum officiis aliquam!",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus a obcaecati cum modi, reprehenderit, et soluta molestiae saepe necessitatibus enim quo nostrum officiis aliquam!",
+      "The application streamlines the creation of price cards, eliminating inefficiencies and inconsistencies caused by manual processes..",
+      "The final output of the price card is a Microsoft PowerPoint (.pptx) file. Stores can generate price cards in various paper sizes, structures, and formats, tailored to offers, promotions, product details, and more.",
+      "Price cards can be generated directly from the web application. Products with different brands and promotions can be uploaded via Android devices or system data in the web platform and then can be generated.",
     ],
     appLink: "",
     repoLink: "",
@@ -186,9 +186,9 @@ export const portfolioData = [
     imageLink: "https://i.ytimg.com/vi/gey73xiS8F4/maxresdefault.jpg",
     stacks: ["ReactJS", "REST API"],
     details: [
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus a obcaecati cum modi, reprehenderit, et soluta molestiae saepe necessitatibus enim quo nostrum officiis aliquam!",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus a obcaecati cum modi, reprehenderit, et soluta molestiae saepe necessitatibus enim quo nostrum officiis aliquam!",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus a obcaecati cum modi, reprehenderit, et soluta molestiae saepe necessitatibus enim quo nostrum officiis aliquam!",
+      "Users can effortlessly search for exercises tailored to specific body parts, enabling personalized fitness exploration.",
+      "Detailed instructions and methods for performing each exercise are provided, accompanied by tutorial videos for better understanding. Additionally, users can discover similar exercises targeting the same body part for a well-rounded workout routine.",
+      "An intuitive dark mode feature is available, allowing users to switch between light and dark themes for a customized and comfortable viewing experience.",
     ],
     appLink:
       "https://my-fitness-app-j1kn-l2j2twf7k-swastik-mohapatras-projects.vercel.app/",

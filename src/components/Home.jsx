@@ -23,10 +23,10 @@ function Home({ mainControls }) {
               <h1 className="text-4xl font-bold leading-normal">
                 I am Swastik Mohapatra
               </h1>
-              <h1 className="text-4xl font-bold leading-normal">
+              <h1 className="text-3xl font-bold leading-normal">
                 <Typewriter
                   options={{
-                    strings: ["Software Engineer", "Front End Developer"],
+                    strings: ["Associate Software Engineer", "Front End Developer"],
                     autoStart: true,
                     pauseFor: 4000,
                     loop: true,

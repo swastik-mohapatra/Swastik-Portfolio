@@ -64,7 +64,7 @@ const Portfolio = ({mainControls}) => {
                         onClick={() => {
                           item?.repoLink
                             ? window.open(item?.repoLink, "_blank")
-                            : toast.warn(' Repo Link does not exist', {
+                            : toast.warn('Repo Link does not exist', {
                               position: "top-center",
                               autoClose: 1500,
                               hideProgressBar: false,
@@ -153,8 +153,8 @@ const Portfolio = ({mainControls}) => {
           portfolioItem={modalDetail}
         />
       )}
-      <ToastContainer />
       </motion.div>
+      <ToastContainer />
     </div>
   );
 };

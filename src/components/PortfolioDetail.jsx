@@ -14,7 +14,7 @@ const PortfolioDetail = ({ setDetailModal, portfolioItem }) => {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className="relative bg-white rounded-lg shadow dark:bg-gray-700 max-w-4xl"
       >
-        <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+        <div className="flex items-center justify-between p-2 md:p-3 border-b rounded-t dark:border-gray-600">
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
             {portfolioItem?.portfolioName}
           </h3>
@@ -27,29 +27,33 @@ const PortfolioDetail = ({ setDetailModal, portfolioItem }) => {
           </button>
         </div>
 
-        <div className="p-4 md:p-5 space-y-4 grid grid-cols-2 gap-6">
+        <div className="p-4 md:p-4 space-y-4 grid grid-cols-2 gap-6">
           <div>
-            <p className="text-sm leading-relaxed ">
+            <p className="text-sm leading-relaxed">
               {portfolioItem?.description}
             </p>
-            <ul className="mt-5 list-disc ml-5 space-y-2 leading-normal">
+            <ul className="mt-4 list-disc ml-5 space-y-1 leading-relaxed">
               {portfolioItem.details.map((point, index) => (
                 <li
                   key={`portfolio-point-${index}`}
-                  className="text-white-100 text-[14px] pl-1 tracking-wider"
+                  className="text-white-100 text-xs pl-1 tracking-wider"
                 >
                   {point}
                 </li>
               ))}
             </ul>
           </div>
-          <img
-            className="rounded-md shadow-md shadow-gray-800 object-cover"
-            src={portfolioItem?.imageLink}
-            alt={portfolioItem?.portfolioName}
-          />
+          <div className="ml-auto">
+            <img
+              className="rounded-md shadow-md shadow-gray-800 object-cover"
+              height="250"
+              width="350"
+              src={portfolioItem?.imageLink}
+              alt={portfolioItem?.portfolioName}
+            />
+          </div>
         </div>
-        <div className="p-4 md:p-5 space-y-4">
+        <div className="p-3 md:p-3 space-y-4">
           <div className="flex flex-row gap-4 text-sm">
             <p className="mt-1 whitespace-nowrap font-bold text-lg">
               Tech Stacks:
@@ -128,10 +132,10 @@ const PortfolioDetail = ({ setDetailModal, portfolioItem }) => {
           </div>
         </div>
 
-        <div className="flex items-center p-3 md:p-4 border-t border-gray-200 rounded-b dark:border-gray-600">
+        <div className="flex items-center p-3 md:p-2 border-t border-gray-200 rounded-b dark:border-gray-600">
           <button
             type="button"
-            className="ml-auto text-white bg-blue-700 duration-500 hover:bg-white hover:text-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:focus:ring-blue-800"
+            className="ml-auto text-white bg-blue-700 duration-500 hover:bg-white hover:text-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center dark:focus:ring-blue-800"
             onClick={() => setDetailModal(false)}
           >
             Close
