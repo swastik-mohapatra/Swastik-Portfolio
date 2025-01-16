@@ -22,10 +22,10 @@ const Education = () => {
                       <p className="2xl:text-lg text-sm font-medium text-gray-900  dark:text-white">
                         {item?.class_name}
                       </p>
-                      <p className="2xl:text-sm text-xs text-gray-500  dark:text-gray-400">
+                      <p className="2xl:text-sm text-xs text-white">
                         {item?.schoolName}
                       </p>
-                      <p className="2xl:text-lg text-sm text-gray-700  dark:text-gray-400">
+                      <p className="2xl:text-lg text-sm text-white">
                       <strong className="text-gray-100">{item?.yearOfPassing}</strong>
                       </p>
                     </div>

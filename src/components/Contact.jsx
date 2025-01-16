@@ -73,8 +73,8 @@ const Contact = ({ mainControls }) => {
       >
         <div className="mx-8 justify-center w-full h-full">
           <h1 className="text-4xl font-bold">Contact</h1>
-          <div className="bg-gray-800 p-8 grid lg:grid-cols-2 gap-8 rounded-lg shadow shadow-slate-900 relative my-10">
-            <div className="bg-black p-6 rounded-lg shadow-2xl relative lg:-left-12 lg:top-0 -top-12">
+          <div className="bg-gray-800 md:p-8 p-4 grid lg:grid-cols-2 md:gap-8 rounded-lg shadow shadow-slate-900 relative my-16 sm:my-10">
+            <div className="bg-black p-6 w-full rounded-lg shadow-2xl relative lg:-left-12 lg:top-0 -top-12">
               <div className="space-y-6">
                 <ContactTextFields
                   label="Name"

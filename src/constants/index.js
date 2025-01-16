@@ -125,14 +125,14 @@ export const experiences = [
 export const educationData = [
   {
     id: 1,
-    class_name: "Xth Standard",
+    class_name: "10th Standard",
     schoolName: "DAV Public School, CDA, Cuttack",
     yearOfPassing: "2016",
     grade: "10.0",
   },
   {
     id: 2,
-    class_name: "XIIth Standard",
+    class_name: "12th Standard",
     schoolName: "DAV Public School, CDA, Cuttack",
     yearOfPassing: "2018",
     grade: "90%",

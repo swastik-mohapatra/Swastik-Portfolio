@@ -28,7 +28,7 @@ import { experiences } from "../constants";
                     contentArrowStyle={{
                       borderRight: "7px solid #374151",
                     }}
-                    date={exp?.duration}
+                    date={<span style={{ color: "#f7f7f7"  }}>{exp?.duration}</span>}
                     iconStyle={{ background: "#374151", color: "white",fontSize:"7" }}
                     icon={<WorkIcon />}
                   >

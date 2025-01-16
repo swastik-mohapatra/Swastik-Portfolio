@@ -16,7 +16,7 @@ const About = ({ mainControls }) => {
         animate={mainControls}
         transition={{ duration: 0.5, delay: 0.25 }}
       >
-        <div className="mx-5 justify-center w-full h-fit">
+        <div className="mx-5 justify-center w-full h-fit text-white">
           <h1 className="text-4xl font-bold">About Me</h1>
           <div className="my-6">
             <div className="md:flex md:justify-between md:items-start gap-10">

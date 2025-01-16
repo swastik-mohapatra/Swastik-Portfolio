@@ -16,7 +16,7 @@ function Home({ mainControls }) {
         animate={mainControls}
         transition={{ duration: 0.5, delay: 0.25 }}
       >
-        <div className="py-10">
+        <div className="py-10 text-wrap">
           <div className="md:flex md:justify-between md:items-center flex-none grid grid-cols-1 md:grid-cols-0 gap-2">
             <div className="ml-0 md:ml-6 md:mt-5 leading-relaxed">
               <h1 className="text-4xl font-bold leading-normal">Hi,</h1>

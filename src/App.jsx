@@ -34,7 +34,7 @@ function App() {
   return (
     <div>
       <NavBar />
-      <div className="px-20 mt-20 w-full">
+      <div className="px-14 sm:px-20 mt-20 w-full">
         {sections.map(({ Component, hook }, index) => (
           <div ref={hook?.ref} key={index}>
             <Component mainControls={hook?.controls} />

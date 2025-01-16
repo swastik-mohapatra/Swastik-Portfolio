@@ -18,7 +18,7 @@ const Skills = ({ mainControls }) => {
         <div className=" mx-5 justify-center w-full h-full">
           <h1 className="text-4xl font-bold">Skills</h1>
           <div className="my-10">
-            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8 md:gap-10 2xl:gap-10 justify-center items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8 md:gap-10 2xl:gap-10 justify-center items-center">
               {techs.map(({ id, src, title, style, rating }) => (
                 <div
                   key={id}
