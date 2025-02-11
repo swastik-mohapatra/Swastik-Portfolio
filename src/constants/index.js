@@ -10,6 +10,7 @@ import git from "../assets/images/Skiils/git.png";
 import bootstrap from "../assets/images/Skiils/bootstrap.png";
 import mysql from "../assets/images/Skiils/mysql.png";
 import sapui5 from "../assets/images/Skiils/sapui5logo.svg";
+import taskManage from "../assets/images/taskManage.png";
 
 export const techs = [
   {
@@ -180,6 +181,21 @@ export const portfolioData = [
   },
   {
     id: 3,
+    portfolioName: "Task Management",
+    description:
+      "The application was designed for management of task with many features like batch operations, drag and drop, filter etc.",
+    imageLink: taskManage,
+    details: [
+      "Users can efficiently create, view, modify, and remove tasks at their convenience, with support for bulk actions like mass deletion and status updates.",
+      "Users can seamlessly drag and drop tasks across different sections in both list and board views.",
+      "Users can track task history through detailed logs, recording creation, updates, and modifications.",
+    ],
+    stacks: ["ReactJs", "TypeScript", "Material UI", "Firebase"],
+    appLink: "https://task-management-e4285.web.app/",
+    repoLink: "https://github.com/swastik-mohapatra/Task-Management",
+  },
+  {
+    id: 4,
     portfolioName: "Fitness App",
     description:
       "The application was designed to provide details of various body part exercises and how to perform it.",
