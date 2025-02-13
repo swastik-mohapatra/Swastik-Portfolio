@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
 import Typewriter from "typewriter-effect";
-// import AIPIC from "../assets/images/comp5.png";
 import Spline from "@splinetool/react-spline";
 import { motion } from "framer-motion";
-import resume from "../assets/files/Swastik-Mohapatra-Resume.pdf";
+import resume from "../assets/files/Swastik-Mohapatra-Resume-2";
 
 function Home({ mainControls }) {
   return (

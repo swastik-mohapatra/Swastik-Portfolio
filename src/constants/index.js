@@ -183,7 +183,7 @@ export const portfolioData = [
     id: 3,
     portfolioName: "Task Management",
     description:
-      "The application was designed for management of task with many features like batch operations, drag and drop, filter etc.",
+      "The application was designed for management of task with dynamic features like batch operations, drag and drop, filter etc.",
     imageLink: taskManage,
     details: [
       "Users can efficiently create, view, modify, and remove tasks at their convenience, with support for bulk actions like mass deletion and status updates.",
