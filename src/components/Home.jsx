@@ -2,7 +2,7 @@
 import Typewriter from "typewriter-effect";
 import Spline from "@splinetool/react-spline";
 import { motion } from "framer-motion";
-import resume from "../assets/files/Swastik-Mohapatra-Resume-2";
+import resume from "../assets/files/Swastik-Mohapatra-Resume-2.pdf";
 
 function Home({ mainControls }) {
   return (
