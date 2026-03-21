@@ -114,7 +114,7 @@ export const experiences = [
   {
     id: 2,
     title: "Associate Software Engineer",
-    company_name: "Incture",
+    company_name: "Incture Technologies",
     duration: "July 2023 - June 2025",
     description: [
       "Working as a Frontend Developer specializing in SAPUI5 and ReactJS and developed intuitive and responsive UI solutions tailored to customer requirements and product needs.",
@@ -125,7 +125,7 @@ export const experiences = [
   {
     id: 3,
     title: "Technical Intern",
-    company_name: "Incture",
+    company_name: "Incture Technologies",
     duration: "January 2023 - July 2023",
     description: [
       "Underwent structured training in SAPUI5, ReactJS, JavaScript, and SAP UI5, with regular assessments and hands-on assignments to validate learning.",
