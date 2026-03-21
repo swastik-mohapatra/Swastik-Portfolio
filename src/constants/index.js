@@ -102,9 +102,20 @@ export const techs = [
 export const experiences = [
   {
     id: 1,
+    title: "Software Engineer",
+    company_name: "Incture Technologies",
+    duration: "July 2025 - present",
+    description: [
+      "Led technical feasibility studies and provided accurate effort estimations for new requirements, ensuring realistic timelines for planning and delivery.",
+      "Architected scalable frontend modules using React.js and SAPUI5, ensuring high performance and maintainability across complex enterprise applications.",
+      "Optimized application performance and user experience, resulting in faster load times and improved data handling for large datasets.",
+    ],
+  },
+  {
+    id: 2,
     title: "Associate Software Engineer",
     company_name: "Incture",
-    duration: "January 2023 - present",
+    duration: "July 2023 - June 2025",
     description: [
       "Working as a Frontend Developer specializing in SAPUI5 and ReactJS and developed intuitive and responsive UI solutions tailored to customer requirements and product needs.",
       "Designed dynamic user interfaces with a focus on scalability and usability.",
@@ -112,7 +123,18 @@ export const experiences = [
     ],
   },
   {
-    id: 2,
+    id: 3,
+    title: "Technical Intern",
+    company_name: "Incture",
+    duration: "January 2023 - July 2023",
+    description: [
+      "Underwent structured training in SAPUI5, ReactJS, JavaScript, and SAP UI5, with regular assessments and hands-on assignments to validate learning.",
+      "Developed and maintained responsive UI components using SAPUI5 and ReactJS, integrated with OData and RESTful APIs, and aligned with SAP Fiori design guidelines.",
+      "Collaborated with mentors and team members to debug issues, improve UI performance, and deliver features in an Agile environment.",
+    ],
+  },
+  {
+    id: 4,
     title: "Internship",
     company_name: "Sahu Technologies",
     duration: "June 2022 - July 2022",
@@ -150,6 +172,21 @@ export const educationData = [
 export const portfolioData = [
   {
     id: 1,
+    portfolioName: "Integrated Operations Platform",
+    description:
+      "The application was built for a US-Canada based oil company to build a dashboard for oil field operations.",
+    imageLink: "https://b1006343.smushcdn.com/1006343/wp-content/uploads/2026/01/81-1-750x422.jpg?lossy=2&strip=1&webp=1",
+    stacks: ["SAP UI5", "Java", "Swift", "SAP BTP"],
+    details: [
+      "Responsive UI components were designed for monitoring real-time production metrics, equipment alarms, and operational downtimes across oil field sites.",
+      "Navigation flows and data presentation were improved by restructuring visual hierarchies and streamlining user interactions, enabling faster and more informed decision-making.",
+      "We collaborated closely with backend teams to integrate and handle real-time data updates, ensuring accurate and timely synchronization across all dashboard views.",
+    ],
+    appLink: "",
+    repoLink: "",
+  },
+  {
+    id: 2,
     portfolioName: "Journal Entry Automation",
     description:
       "The application was built for a US based chemical company to automate manual journals posting in SAP environment.",
@@ -164,13 +201,13 @@ export const portfolioData = [
     repoLink: "",
   },
   {
-    id: 2,
+    id: 3,
     portfolioName: "Price Card Generation",
     description:
       "The application was designed for a Singapore based retail chain to facilitate generation of price card (offers and discount) for various commodities sold in their stores.",
     imageLink:
       "https://onecms-res.cloudinary.com/image/upload/s--E3ujKPa_--/f_auto,q_auto/c_fill,g_auto,h_622,w_830/v1/tdy-migration/img_5336.jpg?itok=LjQj4mY9",
-    stacks: ["SAP UI5", "CAPM NodeJS", "SAP BTP"],
+    stacks: ["SAP UI5", "Kotlin", "CAPM NodeJS", "SAP BTP"],
     details: [
       "The application streamlines the creation of price cards, eliminating inefficiencies and inconsistencies caused by manual processes..",
       "The final output of the price card is a Microsoft PowerPoint (.pptx) file. Stores can generate price cards in various paper sizes, structures, and formats, tailored to offers, promotions, product details, and more.",
@@ -180,7 +217,7 @@ export const portfolioData = [
     repoLink: "",
   },
   {
-    id: 3,
+    id: 4,
     portfolioName: "Task Management",
     description:
       "The application was designed for management of task with dynamic features like batch operations, drag and drop, filter etc.",
@@ -195,7 +232,7 @@ export const portfolioData = [
     repoLink: "https://github.com/swastik-mohapatra/Task-Management",
   },
   {
-    id: 4,
+    id: 5,
     portfolioName: "Fitness App",
     description:
       "The application was designed to provide details of various body part exercises and how to perform it.",

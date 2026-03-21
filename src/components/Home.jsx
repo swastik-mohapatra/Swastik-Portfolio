@@ -2,7 +2,7 @@
 import Typewriter from "typewriter-effect";
 import Spline from "@splinetool/react-spline";
 import { motion } from "framer-motion";
-import resume from "../assets/files/Swastik-Mohapatra-Resume-3.pdf";
+import resume from "../assets/files/Swastik_Mohapatra_Resume_2026.pdf";
 
 function Home({ mainControls }) {
   return (
@@ -26,7 +26,7 @@ function Home({ mainControls }) {
               <h1 className="text-3xl font-bold leading-normal">
                 <Typewriter
                   options={{
-                    strings: ["Associate Software Engineer", "Front End Developer"],
+                    strings: ["Software Engineer", "Front End Developer"],
                     autoStart: true,
                     pauseFor: 4000,
                     loop: true,
